@@ -1,0 +1,16 @@
+Subject: [PATCH] Change the greeting for the optional layer exercise
+
+This message change exists only to demonstrate a recipe append.
+
+Upstream-Status: Inappropriate [demonstration-only behavior]
+
+--- a/hello.c
++++ b/hello.c
+@@ -3,6 +3,6 @@
+ int
+ main(void)
+ {
+-    puts("Hello from recipe-lab-hello!");
++    puts("Hello from the optional recipe-lab-custom layer!");
+     return 0;
+ }

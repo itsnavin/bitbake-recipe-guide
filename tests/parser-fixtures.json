@@ -1,0 +1,11 @@
+[
+  {"name":"soft-weak-empty","text":"SOFT ?= \"first\"\nSOFT ?= \"second\"\nWEAK ??= \"first\"\nWEAK ??= \"second\"\nEMPTY = \"\"\nEMPTY ?= \"ignored\"\n","expected":{"SOFT":"first","WEAK":"second","EMPTY":""}},
+  {"name":"spaces","text":"A = \"middle\"\nA += \"right\"\nA =+ \"left\"\nB = \"middle\"\nB .= \"right\"\nB =. \"left\"\n","expected":{"A":"left middle right","B":"leftmiddleright"}},
+  {"name":"weak-append","text":"W ??= \"x\"\nW += \"y\"\nX ??= \"x\"\nX:append = \"y\"\n","expected":{"W":" y","X":"xy"}},
+  {"name":"operation-order","text":"ORDER = \"one two\"\nORDER:remove = \"two\"\nORDER:prepend = \"zero \"\nORDER:append = \" two three\"\n","expected":{"ORDER":"zero one   three"}},
+  {"name":"late-base","text":"LATE:append = \" tail\"\nLATE = \"replacement\"\n","expected":{"LATE":"replacement tail"}},
+  {"name":"expansion","text":"BASE = \"old\"\nLAZY = \"${BASE}\"\nNOW := \"${BASE}\"\nBASE = \"new\"\nUNKNOWN := \"${NOT_YET}\"\nNOT_YET = \"later\"\nVALUE = \"${@str(6 * 7)}\"\n","expected":{"LAZY":"new","NOW":"old","UNKNOWN":"later","VALUE":"42"}},
+  {"name":"joining","text":"WORDS = \"one \\\n two\"\nQUOTED = '${WORDS}'\n","expected":{"WORDS":"one  two","QUOTED":"one  two"}},
+  {"name":"override-priority","text":"OVERRIDES = \"small:large\"\nCHOICE = \"base\"\nCHOICE:small = \"s\"\nCHOICE:large = \"l\"\n","expected":{"CHOICE":"l"}},
+  {"name":"combined-overrides","text":"OVERRIDES = \"small:large\"\nCHOICE = \"base\"\nCHOICE:small = \"s\"\nCHOICE:large = \"l\"\nCHOICE:small:large = \"both\"\n","expected":{"CHOICE":"both"}}
+]

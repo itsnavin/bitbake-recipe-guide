@@ -1,0 +1,9 @@
+[Unit]
+Description=Print a harmless recipe-lab greeting
+
+[Service]
+Type=oneshot
+ExecStart=@BINDIR@/recipe-lab-hello
+
+[Install]
+WantedBy=multi-user.target

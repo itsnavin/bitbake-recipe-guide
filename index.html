@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d35">
+  <meta name="description" content="Learn BitBake recipe creation: in-depth Scarthgap syntax, command effects, annotated examples and troubleshooting. Offline-friendly, no commands executed.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>BitBake Field Guide</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script type="module" src="./assets/app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#/"><span class="brand-icon" aria-hidden="true">bb<span>_</span></span><span>BitBake <strong>Field Guide</strong><small>RECIPES, EXPLAINED.</small></span></a>
+    <div class="header-right"><span class="baseline-pill">SCARTHGAP <span>5.0.13</span></span><a class="repo-link" href="https://github.com/itsnavin/bitbake-recipe-guide">Source <span aria-hidden="true">↗</span></a><button id="nav-toggle" class="icon-button" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+  </header>
+  <div class="app-layout">
+    <aside id="sidebar" class="sidebar" aria-label="Guide navigation">
+      <div class="sidebar-intro">YOUR BUILD-DESK COMPANION</div>
+      <nav>
+        <a href="#/" class="nav-home">Overview <span>↗</span></a>
+        <h2>START HERE</h2>
+        <a href="#/topic/learning-path">Your first recipe <span>01</span></a>
+        <a href="#/topic/mental-model">The mental model <span>02</span></a>
+        <h2>THE REFERENCE</h2>
+        <a href="#/commands">Command explorer <span id="command-count"></span></a>
+        <a href="#/topics">Syntax & metadata <span id="topic-count"></span></a>
+        <a href="#/examples">Recipe workshop <span>07</span></a>
+        <a href="#/topic/troubleshooting">Troubleshooting <span>↗</span></a>
+        <a href="#/topic/glossary">Glossary <span>↗</span></a>
+        <h2>ABOUT THIS EDITION</h2>
+        <a href="#/coverage">Coverage & sources</a>
+        <a href="./downloads/recipe-lab-all.zip" download>Download example layers <span>↓</span></a>
+      </nav>
+      <div class="sidebar-note"><span class="status-dot"></span><strong>A reference, not a terminal.</strong><p>Commands are shown, never run. Your build stays on your machine.</p><p id="offline-status" role="status">Offline copy not yet ready.</p></div>
+      <div class="sidebar-footer">BitBake 2.8.1 · Yocto 5.0.13<br>Curated for the long-term-support release.</div>
+    </aside>
+    <div class="workspace">
+      <section class="searchbar" aria-label="Search the guide">
+        <label class="search-label" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find a command, variable, task, or problem..." autocomplete="off"><kbd aria-hidden="true">/</kbd></label>
+        <label class="filter-label" for="filter">Show<select id="filter"><option value="all">Everything</option><option value="command">Commands</option><option value="topic">Syntax & guides</option><option value="example">Recipes</option><option value="beginner">Beginner</option><option value="advanced">Advanced</option></select></label>
+      </section>
+      <div id="search-status" class="sr-only" role="status" aria-live="polite"></div>
+      <main id="main" tabindex="-1"></main>
+      <footer class="page-footer"><span>Built to make the next recipe less mysterious.</span><a href="#/coverage">Baseline, sources & limitations <span aria-hidden="true">↗</span></a></footer>
+    </div>
+  </div>
+  <noscript><p class="noscript">This searchable guide needs JavaScript. <a href="./downloads/recipe-lab-all.zip">Download the example layers</a> or <a href="https://docs.yoctoproject.org/5.0.13/dev-manual/new-recipe.html">read the official Scarthgap recipe manual</a>.</p></noscript>
+</body>
+</html>
